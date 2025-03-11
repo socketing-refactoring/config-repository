@@ -39,6 +39,9 @@ management:
     web:
       exposure:
         include: health, prometheus, refresh
+  endpoint:
+    prometheus:
+      enabled: true
 
 springdoc:
   default-consumes-media-type: application/json
