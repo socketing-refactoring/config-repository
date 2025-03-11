@@ -9,7 +9,7 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://3.37.27.246:5432/member_domain
+    url: jdbc:postgresql://member-service-database/member_domain
     username: jeein
     password: 93671665
     hikari:
