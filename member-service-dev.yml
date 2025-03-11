@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: member-service-dev
+    name: member-service
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://member-service-database:5432/member_domain
