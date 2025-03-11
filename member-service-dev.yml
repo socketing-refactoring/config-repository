@@ -4,27 +4,6 @@ server:
 spring:
   application:
     name: member-service-dev
-  output:
-    ansi.enabled: ALWAYS
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://member-service-database/member_domain
-    username: jeein
-    password: 93671665
-    hikari:
-      minimum-idle: 5
-      maximum-pool-size: 20
-
-  jpa:
-    database: postgresql
-    show-sql: true
-    hibernate:
-      ddl-auto: create
-#    properties:
-#      hibernate:
-#        format_sql: true
-#        highlight_sql: true
 
 eureka:
   client:
