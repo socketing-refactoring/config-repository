@@ -1,0 +1,77 @@
+server:
+  port: 8010
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:
+        http://192.168.139.100:8761/eureka
+
+logging:
+  config: classpath:logback-spring.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, refresh
+  endpoint:
+    prometheus:
+      enabled: true
+
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  show-actuator: true
+  swagger-ui:
+    path: /api-docs
+    operations-sorter: alpha
+    disable-swagger-default-url: true
+    display-request-duration: true
+#    url: /openapi.yml
+  api-docs:
+    path: /auth-service/v3/api-docs
+
+token:
+  jwt:
+    private: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCSEGIj7EHrVGMC
+      LyM3p7dQZUnvblvp9mACy2vrUsDTg0Gve5k78dmBA3y2Wf66H1/hLHXdsDxi22FK
+      VcFV7xFYx0gSFjVZJ9MRrwVAb6cEitYQTOhzdk207PLV8aVrt8yVUU26fumQuEep
+      KHCI0ysILkRT3DGTGncOHnhyA6jeEDm/bpjI1dTeBVp+CgycUIx6zHCmhZoHjGqU
+      zno8T4sWVHtTaUAfPSES27jCHANLnTlwxypvq4HynyHUo8HPKXPw1B9L5BUKuLDc
+      vI6OTS9EFl/BOfMVatEWHskn3X3xg9VJ/Xw7cI9Uh4zVF+1v9l54DJWctQc3zgNO
+      +Qjk9GTlAgMBAAECggEAAW14rWz8SUn+Mb5FUGeceL0GezIPf0HONxjHAnokeXPg
+      o+xWHoamgwaisxUhbwR/tYTvnfwVw+Z7Bp+HSMkuZwBKvwqChzLjOgVasB6nQOuO
+      eLve0G2lssnJNWLIQQR/Nme9JDIO6pWH2VUUaPHy/SsltdHmXUFhTEtAnXSrCN3s
+      ne6Bp2Ao3exhcQYIoRwqLchPJMWIEDZDRVB6PMiMBh9VQwJMi9sPv1+mzeSFnu5t
+      IIjxo3AgdwuJg301uhdbW1uwy0MdY+wMetSi9h8cZp/thKq/OnAZWwaYEHDjWwj0
+      rrvgx2/2hxtZBMjp1eFtnQUtZ7cVyKM2zJiVvLHFgQKBgQDHr29L81ehBuSG1HdQ
+      G91m9n+Fn6EKUAFOfZXcwAtoaOAvPJtPkSdjwAEZjSBbk0Ke+kOJBy8eENAQy1LQ
+      PPlmyKDqcdHaxc/dIQ2uQPCF+1iqV4zkFjkixREprVU6YCCOXt1kXt+y4Voujm0o
+      4UM0/Z78aU9se+HY7nEY5NnUhQKBgQC7Qa68YmDuT9uV3Y9pUQSMmp6FcDhge5kr
+      zUCy1EanoLNJ9EEsTtR8+7QNBvs6WEj+ypcwSXOA2tYU2ET03rXBjxHL++aJslPo
+      HodOCXsXsayOJG4Wpku9rPL85QljhsiXSK/DaKLnY+gtmT6ocSdDf55RwA51Umo8
+      qM2zAh7s4QKBgQC/lJyGVPDE6JUGmv/h1uojZ+nPLOjXuQyX3ruScJpBUSWNjGtB
+      +nS9KjCj8BeUZIOtfVSgOklFYkINatWIPofVyjVA2XTKnbChap3yihF5qj1WKOte
+      xceJiWK/BrLXb/SsQ23LZ47d04GvWyx15TGSvKX1a6As5+o2NAZEKQSo9QKBgELq
+      ygLQNUt0hkgcES/VoAaPCq8s1zjDco1QoBpH+afVqbx36QJoeU7gtAsjv4uuGQfU
+      Zgr/dKNLkM2KK7pGDDXLZtS6hDwY2htNLZUZlj91YvC43A6EBvUVZRAy2RQUCoLl
+      msn+DpkZ/tKsvNN8/EcGyBD2zTPn68cZm8iorVyBAoGAQKDbiwpeX5BCO1b3ZLGO
+      vOjUTpA5QhPvDqDL4fgQk2XGTV5IUAY9SBjBTiArhIOZjiPhgEPQpk1fp9HROAlF
+      F8VIj6Ot1RwR9s3gjWiM2c5JhZuv2TDCVfwsv7QhmgDYo4f53jBfzGpLeGUiQZNd
+      ISYH1g3GVQyVif3g6QjTQVc=
+      -----END PRIVATE KEY-----
+    public: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkhBiI+xB61RjAi8jN6e3
+      UGVJ725b6fZgAstr61LA04NBr3uZO/HZgQN8tln+uh9f4Sx13bA8YtthSlXBVe8R
+      WMdIEhY1WSfTEa8FQG+nBIrWEEzoc3ZNtOzy1fGla7fMlVFNun7pkLhHqShwiNMr
+      CC5EU9wxkxp3Dh54cgOo3hA5v26YyNXU3gVafgoMnFCMesxwpoWaB4xqlM56PE+L
+      FlR7U2lAHz0hEtu4whwDS505cMcqb6uB8p8h1KPBzylz8NQfS+QVCriw3LyOjk0v
+      RBZfwTnzFWrRFh7JJ9198YPVSf18O3CPVIeM1Rftb/ZeeAyVnLUHN84DTvkI5PRk
+      5QIDAQAB
+      -----END PUBLIC KEY-----
