@@ -28,10 +28,8 @@ eureka:
     service-url:
       defaultZone: http://192.168.139.100:8761/eureka/
   instance:
-    ip-address: 192.168.136.97  # 서비스의 IP 주소를 수동으로 지정
-    hostname: 192.168.136.97
     prefer-ip-address: true  # IP 주소로 등록
-    instance-id: ${spring.application.name}:${random.value}
+    ip-address: 192.168.136.97  # 서비스의 IP 주소를 수동으로 지정
     
 logging:
   config: classpath:logback-spring.xml
