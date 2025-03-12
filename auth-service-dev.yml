@@ -6,8 +6,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone:
-        http://192.168.139.100:8761/eureka
+      defaultZone: http://192.168.139.100:8761/eureka
 
 logging:
   config: classpath:logback-spring.xml
