@@ -8,19 +8,40 @@ spring:
         - id: auth
           predicates:
             - Path=/auth/**
-          uri: http://192.168.140.164:8010
+          uri: lb://auth-service
         - id: auth
           predicates:
             - Path=/members/**
-          uri: http://192.168.136.97:8081
+          uri: lb://member-service
         - id: auth
           predicates:
             - Path=/events/**
-          uri: http://192.168.140.216:8082
+          uri: lb://event-service
         - id: auth
           predicates:
             - Path=/orders/**
-          uri: http://192.168.129.168:8083
+          uri: lb://order-service
+
+# spring:
+#   cloud:
+#     gateway:
+#       routes:
+#         - id: auth
+#           predicates:
+#             - Path=/auth/**
+#           uri: http://192.168.140.164:8010
+#         - id: auth
+#           predicates:
+#             - Path=/members/**
+#           uri: http://192.168.136.97:8081
+#         - id: auth
+#           predicates:
+#             - Path=/events/**
+#           uri: http://192.168.140.216:8082
+#         - id: auth
+#           predicates:
+#             - Path=/orders/**
+#           uri: http://192.168.129.168:8083
 
 eureka:
   client:
