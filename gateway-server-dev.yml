@@ -33,7 +33,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus, refresh
+        include: health, prometheus, refresh, routes
   endpoint:
     prometheus:
       enabled: true
