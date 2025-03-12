@@ -27,6 +27,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://192.168.139.100:8761/eureka/
+  instance:
+    appname: member-service
 
 logging:
   config: classpath:logback-spring.xml
