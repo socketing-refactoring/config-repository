@@ -12,7 +12,7 @@ spring:
         - id: member
           predicates:
             - Path=/api/v1/members/**
-          uri: lb://member-service
+          uri: http://http://43.202.46.106:8081
         - id: event
           predicates:
             - Path=/api/v1/events/**
