@@ -28,6 +28,7 @@ eureka:
     service-url:
       defaultZone: http://192.168.139.100:8761/eureka/
   instance:
+    hostname: 192.168.136.97
     prefer-ip-address: true  # IP 주소로 등록
 
 logging:
