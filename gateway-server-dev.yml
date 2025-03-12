@@ -7,19 +7,19 @@ spring:
       routes:
         - id: auth
           predicates:
-            - Path=/auth/**
+            - Path=/api/v1/auth/**
           uri: lb://auth-service
         - id: auth
           predicates:
-            - Path=/members/**
+            - Path=/api/v1/members/**
           uri: lb://member-service
         - id: auth
           predicates:
-            - Path=/events/**
+            - Path=/api/v1/events/**
           uri: lb://event-service
         - id: auth
           predicates:
-            - Path=/orders/**
+            - Path=/api/v1/orders/**
           uri: lb://order-service
 
 # spring:
