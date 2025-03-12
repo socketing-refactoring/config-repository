@@ -1,0 +1,40 @@
+server:
+  port:
+    8000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth
+          predicates:
+            - Path=/auth/**
+          uri: http://192.168.140.164:8010
+        - id: auth
+          predicates:
+            - Path=/members/**
+          uri: http://192.168.136.97:8081
+        - id: auth
+          predicates:
+            - Path=/events/**
+          uri: http://192.168.140.216:8082
+        - id: auth
+          predicates:
+            - Path=/orders/**
+          uri: http://192.168.129.168:8083
+
+eureka:
+  client:
+    service-url.defaultZone: http://192.168.139.100:8761/eureka
+
+logging:
+  config: classpath:logback-spring.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, refresh
+  endpoint:
+    prometheus:
+      enabled: true
