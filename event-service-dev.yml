@@ -3,7 +3,7 @@ server:
 
 upload:
   path:
-    temp: /Users/socketing/temp
+    temp: /upload/socketing/temp
 
 spring:
   servlet:
@@ -13,7 +13,7 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/event_domain
+    url: jdbc:postgresql://event-service-database:5432/event_domain
     username: jeein
     password: 12345678
     hikari:
