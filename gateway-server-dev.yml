@@ -22,14 +22,6 @@ spring:
             - Path=/api/v1/orders/**
           uri: lb://order-service
 
-spring:
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false  # Ribbon을 사용하지 않도록 설정
-      round-robin:
-        enabled: true  # Round Robin을 사용하도록 설정
-
 eureka:
   client:
     service-url.defaultZone: http://192.168.139.100:8761/eureka
