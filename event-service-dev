@@ -1,0 +1,58 @@
+server:
+  port: 8082
+
+upload:
+  path:
+    temp: /Users/socketing/temp
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/event_domain
+    username: jeein
+    password: 12345678
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        highlight_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.139.100:8761/eureka/
+
+logging:
+  config: classpath:logback-spring.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, refresh
+  endpoint:
+    prometheus:
+      enabled: true
+
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  show-actuator: true
+  swagger-ui:
+    path: /api-docs
+    operations-sorter: alpha
+    disable-swagger-default-url: false
+    display-request-duration: true
